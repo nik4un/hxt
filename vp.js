@@ -1,7 +1,9 @@
 // === Введение в программирование ===
 // ============== тесты ==============
 
-// ========== 18 ===============
+// ============== тесты ==============
+
+// ==========  Делает заглавной первую букву каждого слова ===============
 // const upCaseStartWorld = (n, sentence) =>{
 //   if (n === 0) {
 //     return sentence[n].toUpperCase() + sentence.substring(n + 1);
@@ -9,14 +11,14 @@
 //     return sentence.substring(0, n) + sentence[n].toUpperCase() + sentence.substring(n + 1);
 //   }
 // };
-
+//
 // const solution = (str) => {
 //   let upStr = str;
 //   // return str[0].toUpperCase() + str.substring(1);
 //   if (str[0] !==' ') {
 //       upStr = upCaseStartWorld(0, str);
 //     }
-
+//
 //   for (let i = 0; i < str.length; i++) {
 //      if (str[i] === ' ') {
 //       if (str[i + 1] !== ' ') {
@@ -70,6 +72,7 @@
 //   }
 //   return true;
 // };
+// console.log(isPrime(5));
 // document.write(isPrime(5));
 
 // ====== 11 ==========
@@ -101,11 +104,11 @@
 //   }
 //   return  divisor;
 // };
+
 // document.write(smallestDivisor(121));
 
 // ====== 9 ==========
 // const smallestDivisor = (num) => {
-//   // BEGIN (write your solution here)
 //   const iter = (divisor, dividend) => {
 // 		if ((dividend % divisor) === 0) {
 // 			return divisor;
