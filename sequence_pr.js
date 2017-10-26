@@ -1,3 +1,23 @@
+//  ================ Уникальное объединение ===============
+// Я:
+// const union = (list1, list2) => {
+//   const func = (element, acc) => (has(acc, element) ? acc : cons(element, acc));
+//   const one = reduce(func, l(), list1);
+//   return reverse(reduce(func, one, list2));
+// };
+// export default union;
+
+// Учитель:
+// export default (list1, list2) => {
+//   const appendUniq = (base, list) => {
+//     const result = reduce((value, acc) =>
+//       (has(acc, value) ? acc : cons(value, acc)),
+//       reverse(base), list);
+//     return reverse(result);
+//   };
+//   return appendUniq(appendUniq(l(), list1), list2);
+// };
+
 // ========== Первые n элементов =============
 // const take = (num, list) => {
 //   if (num === 0 || isEmpty(list)) {
