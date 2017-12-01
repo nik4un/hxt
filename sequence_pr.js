@@ -1,4 +1,41 @@
 /* eslint-disable */
+// ================ Списки на базе строк ===============
+import { length, substr, indexOf } from './strings';
+
+const delimiter = '\n';
+
+export const l = (...items) => items.join(delimiter);
+
+export const toString = list => `(${list.split(delimiter).join(', ')})`;
+
+export const head = (list) => {
+  const [first, ...rest] = list.split(delimiter);
+  return first;
+};
+
+export const tail = (list) => {
+  const [first, ...rest] = list.split(delimiter);
+  return rest.join(delimiter);
+};
+
+export const isEmpty = list => (list.length === 0);
+
+export const cons = (list1, list2) => (isEmpty(list2) ? `${list1}` : `${list1}, ${list2}`);
+
+export const filter = (func, list) => list.split(delimiter).filter(func).join(delimiter);
+
+export const map = (func, list) => list.split(delimiter).map(func).join(delimiter);
+
+export const reduce = (func, start, list) => {
+  const iter = (tailing, acc) => {
+    if (isEmpty(tailing)) {
+      return acc;
+    }
+    return iter(tail(tailing), func(head(tailing), acc));
+  };
+  return iter(list, start);
+};
+
 // ================ Выбор по селектору ===============
 // Учитель:
 // export const select = (query, html) => {

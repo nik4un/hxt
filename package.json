@@ -4,7 +4,8 @@
   "description": "Обучение на hexlet",
   "main": "dist/main.js",
   "dependencies": {
-    "gulp": "*"
+    "gulp": "*",
+    "hexlet-immutable-fs-trees": "*"
   },
   "devDependencies": {
     "babel-cli": "*",
@@ -27,11 +28,13 @@
     "jest-cli": "*",
     "hexlet-html-tags": "^0.2.5",
     "hexlet-pairs-data": "^1.0.6",
-    "npm": "*",
     "onchange": "^3.2.1",
     "parallelshell": "^3.0.2"
   },
   "scripts": {
+    "babel-node": "babel-node",
+    "go": "babel-node -- index.js",
+    "eslint": "eslint",
     "lint-f": "eslint main.js --fix",
     "babel-build": "babel src -d dist --source-maps inline",
     "babel-watch": "babel src -d dist --source-maps inline -w",
