@@ -1,45 +1,49 @@
-import { mkdir, mkfile } from 'hexlet-immutable-fs-trees'; // eslint-disable-line
+// eslint-disable-line
+const buildHtml = (data) => {
+  [tag, other] = data;
+  // let tail = '';
+  const attributes = other.filter(a => (io instanceof Object && !Array.isArray(io)) ? true : false);
+  const res = other.map((io) => {
+    if (io instanceof Object && !Array.isArray(io)) {
+      const atrs = Object.keys(io)
+        .map(iKey => ` ${iKey}: "${item[iKey]}"`).join(' ');
+       `<${tag} ${atr}>`;
+    }
+    return `<${tag}>`
+    }
+    if (typeof io === 'string') {
+      return `<${tag}>${io}`;
+    }
 
-const downcaseFileNames = (getDir) => {
-  if (getDir.type === 'directory') {
-    return { ...getDir, children: (getDir.children || []).map(downcaseFileNames) };
-  }
-  return { ...getDir, name: getDir.name.toLowerCase() };
+  });
+
 };
 
-const tree = mkdir('/', [
-  mkdir('eTc', [
-    mkdir('NgiNx'),
-    mkdir('CONSUL', [
-      mkfile('Config.json'),
-    ]),
-  ]),
-  mkfile('hOsts'),
-]);
-const updatedTree = downcaseFileNames(tree);
-console.log(updatedTree);
+const data = ['html', [
+  ['meta', [
+    ['title', 'hello, hexlet!'],
+  ]],
+  ['body', { class: 'container' }, [
+    ['h1', { class: 'header' }, 'html builder example'],
+    ['div', [
+      ['span', 'span text2'],
+      ['span', 'span text3'],
+    ]],
+  ]],
+]];
 
-// const downcaseFileNames = (node) => {
-//   if (node.type === 'directory') {
-//     return { ...node, children: (node.children || []).map(downcaseFileNames) };
-//   }
-//   return { ...node, name: node.name.toLowerCase() };
-// };
-//
-// export default downcaseFileNames;
-// const dfs = (tree) => {
-//   const [nodeName, children] = tree;
-//   const newName = nodeName.toLocaleLowerCase();
-//   if (children) {
-//     return [newName, children.map(dfs)];
-//   }
-//   return [newName];
-// };
-
-// const tree = ['A',
-//  [['B', [['E'], ['F']]],
-//  ['C'],
-//  ['D', [['G'], ['J']]],
-// ]];
-
-// console.log(JSON.stringify(dfs(tree)));
+const res1 = buildHtml(data);
+// <html>
+//   <meta><title>hello, hexlet!</title></meta>
+//   <body class="container">
+//     <h1 class="header">html builder example</h1>
+//     <div>
+//       <span>span text2</span>
+//       <span>span text3</span>
+//     </div>
+//   </body>
+// </html>
+console.log(res1);
+// console.log(res2);
+// console.log(res3);
+// console.log(res4);
